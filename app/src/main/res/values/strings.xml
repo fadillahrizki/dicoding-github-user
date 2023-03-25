@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DicodingGithubUser</string>
+    <string name="search">Cari</string>
+    <string name="search_hint">Masukkan kata</string>
+    <string name="score">Score:</string>
+    <string name="example_score">10.0</string>
+    <string name="example_username">-</string>
+    <string name="empty_data">Tidak ada data!</string>
+    <string name="search_first">Silahkan cari terlebih dahulu!</string>
+    <string name="example_name">-</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="follower_count">0</string>
+    <string name="example_company">-</string>
+    <string name="example_location">-</string>
+    <string name="error">Gagal memuat data!</string>
+    <string name="between">|</string>
+    <string name="icon_group">icon group</string>
+    <string name="avatar">avatar</string>
+    <string name="icon_error">icon error</string>
+    <string name="icon_office">icon office</string>
+    <string name="icon_place">icon place</string>
+    <string name="tab_layout">Tab layout</string>
+</resources>
