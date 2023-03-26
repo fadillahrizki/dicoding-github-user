@@ -2,7 +2,6 @@ package com.dicoding.githubuser.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +13,7 @@ import com.dicoding.githubuser.R
 import com.dicoding.githubuser.adapters.UserDetailAdapter
 import com.dicoding.githubuser.databinding.FragmentFollowerBinding
 import com.dicoding.githubuser.viewmodels.MainViewModel
+
 
 class FollowerFragment : Fragment() {
 
@@ -51,9 +51,25 @@ class FollowerFragment : Fragment() {
             followerAdapter.notifyDataSetChanged()
         }
 
+        if(savedInstanceState == null){
+            mainViewModel.getFollowers(activity?.intent?.getStringExtra("login")!!)
+        }
+    }
 
-        mainViewModel.getFollowers(activity?.intent?.getStringExtra("login")!!)
+    override fun onResume() {
+        super.onResume()
+        setProperHeightOfView()
+    }
 
+    private fun setProperHeightOfView() {
+        val layoutView = binding.root
+        if (layoutView != null) {
+            val layoutParams = layoutView.layoutParams
+            if (layoutParams != null) {
+                layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                layoutView.requestLayout()
+            }
+        }
     }
 
 }

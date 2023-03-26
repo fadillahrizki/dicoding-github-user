@@ -49,7 +49,25 @@ class FollowingFragment : Fragment() {
             followingAdapter.notifyDataSetChanged()
         }
 
-        mainViewModel.getFollowing(activity?.intent?.getStringExtra("login")!!)
+        if(savedInstanceState == null){
+            mainViewModel.getFollowing(activity?.intent?.getStringExtra("login")!!)
+        }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setProperHeightOfView()
+    }
+
+    private fun setProperHeightOfView() {
+        val layoutView = binding.root
+        if (layoutView != null) {
+            val layoutParams = layoutView.layoutParams
+            if (layoutParams != null) {
+                layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                layoutView.requestLayout()
+            }
+        }
     }
 }

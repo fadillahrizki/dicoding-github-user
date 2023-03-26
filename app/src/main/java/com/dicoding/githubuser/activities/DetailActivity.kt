@@ -12,7 +12,9 @@ import androidx.annotation.StringRes
 import androidx.core.view.get
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.dicoding.githubuser.R
@@ -47,7 +49,7 @@ class DetailActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = detailPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
-        TabLayoutMediator(tabs, viewPager) { tab, position ->
+        TabLayoutMediator(tabs, viewPager, true, true) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
         supportActionBar?.elevation = 0f
@@ -67,7 +69,10 @@ class DetailActivity : AppCompatActivity() {
             setDetail(it)
         }
 
-        mainViewModel.getDetailUser(intent.getStringExtra("login")!!)
+        if (savedInstanceState == null) {
+            mainViewModel.getDetailUser(intent.getStringExtra("login")!!)
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
