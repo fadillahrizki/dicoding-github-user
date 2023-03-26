@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             if (it) {
                 binding.llError.visibility = View.GONE
                 binding.llEmpty.visibility = View.GONE
+                binding.rvSearch.visibility = View.GONE
             }
         }
 
