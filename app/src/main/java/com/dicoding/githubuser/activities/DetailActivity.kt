@@ -1,26 +1,16 @@
 package com.dicoding.githubuser.activities
 
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.ViewTreeObserver
-import android.widget.Adapter
-import android.widget.LinearLayout
 import androidx.annotation.StringRes
-import androidx.core.view.get
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.PagerAdapter
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.dicoding.githubuser.R
 import com.dicoding.githubuser.adapters.DetailPagerAdapter
 import com.dicoding.githubuser.databinding.ActivityDetailBinding
-import com.dicoding.githubuser.databinding.ActivityMainBinding
 import com.dicoding.githubuser.models.User
 import com.dicoding.githubuser.viewmodels.MainViewModel
 import com.google.android.material.tabs.TabLayout
@@ -65,7 +55,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         mainViewModel.isError.observe(this) {
-            binding.llError.visibility = if(it) View.VISIBLE else View.GONE
+            binding.llError.visibility = if (it) View.VISIBLE else View.GONE
             binding.llData.visibility = if (it) View.GONE else View.VISIBLE
         }
 
@@ -84,7 +74,7 @@ class DetailActivity : AppCompatActivity() {
         return true
     }
 
-    private fun setDetail(user: User){
+    private fun setDetail(user: User) {
         Glide
             .with(this)
             .load(user.avatarUrl)

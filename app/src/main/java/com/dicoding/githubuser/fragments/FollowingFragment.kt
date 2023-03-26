@@ -2,14 +2,13 @@ package com.dicoding.githubuser.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dicoding.githubuser.R
 import com.dicoding.githubuser.adapters.UserDetailAdapter
 import com.dicoding.githubuser.databinding.FragmentFollowingBinding
 import com.dicoding.githubuser.viewmodels.MainViewModel
@@ -20,7 +19,11 @@ class FollowingFragment : Fragment() {
     private lateinit var mainViewModel: MainViewModel
     private lateinit var followingAdapter: UserDetailAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentFollowingBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,7 +44,7 @@ class FollowingFragment : Fragment() {
         }
 
         mainViewModel.isEmptyFollowing.observe(viewLifecycleOwner) {
-            binding.llEmpty.visibility = if(it) View.VISIBLE else View.GONE
+            binding.llEmpty.visibility = if (it) View.VISIBLE else View.GONE
         }
 
         mainViewModel.following.observe(viewLifecycleOwner) { response ->
@@ -49,7 +52,7 @@ class FollowingFragment : Fragment() {
             followingAdapter.notifyDataSetChanged()
         }
 
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             mainViewModel.getFollowing(activity?.intent?.getStringExtra("login")!!)
         }
 

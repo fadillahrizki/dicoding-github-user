@@ -6,12 +6,15 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
-    companion object{
+    companion object {
         fun getApiService(): ApiService {
             val authInterceptor = Interceptor { chain ->
                 val req = chain.request()
                 val requestHeaders = req.newBuilder()
-                    .addHeader("Authorization", "token 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")
+                    .addHeader(
+                        "Authorization",
+                        "token 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"
+                    )
                     .build()
                 chain.proceed(requestHeaders)
             }

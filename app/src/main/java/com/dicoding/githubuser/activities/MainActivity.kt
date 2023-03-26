@@ -6,8 +6,6 @@ import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
@@ -16,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubuser.R
 import com.dicoding.githubuser.adapters.SearchAdapter
 import com.dicoding.githubuser.databinding.ActivityMainBinding
-import com.dicoding.githubuser.models.SearchResponse
 import com.dicoding.githubuser.viewmodels.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -47,11 +44,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainViewModel.isSearch.observe(this) {
-            binding.llSearch.visibility = if(it) View.GONE else View.VISIBLE
+            binding.llSearch.visibility = if (it) View.GONE else View.VISIBLE
         }
 
         mainViewModel.isEmpty.observe(this) {
-            binding.llEmpty.visibility = if(it) View.VISIBLE else View.GONE
+            binding.llEmpty.visibility = if (it) View.VISIBLE else View.GONE
         }
 
         mainViewModel.search.observe(this) { response ->
@@ -60,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainViewModel.isError.observe(this) {
-            binding.llError.visibility = if(it) View.VISIBLE else View.GONE
+            binding.llError.visibility = if (it) View.VISIBLE else View.GONE
             binding.rvSearch.visibility = if (it) View.GONE else View.VISIBLE
         }
 
@@ -81,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                 searchView.clearFocus()
                 return true
             }
+
             override fun onQueryTextChange(newText: String): Boolean {
                 return false
             }

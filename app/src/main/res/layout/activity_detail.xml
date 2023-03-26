@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    android:id="@+id/nested_scroll_view"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nested_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -18,8 +17,8 @@
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:indeterminateTint="@color/black"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,23 +35,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible"
-            tools:ignore="UseCompoundDrawables">
+            tools:ignore="UseCompoundDrawables"
+            tools:visibility="visible">
 
             <ImageView
-                android:src="@drawable/error"
                 android:layout_width="50dp"
-                android:layout_gravity="center"
                 android:layout_height="50dp"
-                app:tint="@color/black"
-                android:contentDescription="@string/icon_error" />
+                android:layout_gravity="center"
+                android:contentDescription="@string/icon_error"
+                android:src="@drawable/error"
+                app:tint="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:textSize="20sp"
-                android:text="@string/error" />
+                android:text="@string/error"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -113,9 +112,9 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="6dp"
+                        android:contentDescription="@string/icon_group"
                         android:src="@drawable/ic_group"
-                        app:tint="@color/white"
-                        android:contentDescription="@string/icon_group" />
+                        app:tint="@color/white" />
 
                     <TextView
                         android:id="@+id/followers"
@@ -123,21 +122,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/follower_count"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/followers"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/between"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/following"
@@ -145,13 +144,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/follower_count"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/following"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -165,9 +164,9 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="6dp"
+                        android:contentDescription="@string/icon_office"
                         android:src="@drawable/ic_office"
-                        app:tint="@color/white"
-                        android:contentDescription="@string/icon_office" />
+                        app:tint="@color/white" />
 
                     <TextView
                         android:id="@+id/company"
@@ -175,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/example_company"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -188,9 +187,9 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="6dp"
+                        android:contentDescription="@string/icon_place"
                         android:src="@drawable/ic_place"
-                        app:tint="@color/white"
-                        android:contentDescription="@string/icon_place" />
+                        app:tint="@color/white" />
 
                     <TextView
                         android:id="@+id/location"
@@ -198,7 +197,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/example_location"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -217,7 +216,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

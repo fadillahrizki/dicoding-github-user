@@ -21,8 +21,18 @@ class FollowerFragment : Fragment() {
     private lateinit var mainViewModel: MainViewModel
     private lateinit var followerAdapter: UserDetailAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentFollowerBinding.bind(inflater.inflate(R.layout.fragment_follower, container, false))
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentFollowerBinding.bind(
+            inflater.inflate(
+                R.layout.fragment_follower,
+                container,
+                false
+            )
+        )
         return binding.root
     }
 
@@ -43,7 +53,7 @@ class FollowerFragment : Fragment() {
         }
 
         mainViewModel.isEmptyFollowers.observe(viewLifecycleOwner) {
-            binding.llEmpty.visibility = if(it) View.VISIBLE else View.GONE
+            binding.llEmpty.visibility = if (it) View.VISIBLE else View.GONE
         }
 
         mainViewModel.followers.observe(viewLifecycleOwner) { response ->
@@ -51,7 +61,7 @@ class FollowerFragment : Fragment() {
             followerAdapter.notifyDataSetChanged()
         }
 
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             mainViewModel.getFollowers(activity?.intent?.getStringExtra("login")!!)
         }
     }
