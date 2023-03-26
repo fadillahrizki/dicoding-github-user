@@ -12,7 +12,7 @@ import com.dicoding.githubuser.R
 import com.dicoding.githubuser.activities.DetailActivity
 import com.dicoding.githubuser.models.UserDetail
 
-class UserDetailAdapter() : RecyclerView.Adapter<UserDetailAdapter.ViewHolder>() {
+class UserDetailAdapter : RecyclerView.Adapter<UserDetailAdapter.ViewHolder>() {
 
     var mUsers: ArrayList<UserDetail> = ArrayList()
 

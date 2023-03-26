@@ -1,5 +1,6 @@
 package com.dicoding.githubuser.network
 
+import com.dicoding.githubuser.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -13,7 +14,7 @@ class ApiConfig {
                 val requestHeaders = req.newBuilder()
                     .addHeader(
                         "Authorization",
-                        "token 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N"
+                        "token ${BuildConfig.API_KEY}"
                     )
                     .build()
                 chain.proceed(requestHeaders)

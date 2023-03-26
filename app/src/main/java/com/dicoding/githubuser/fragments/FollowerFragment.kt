@@ -17,7 +17,7 @@ import com.dicoding.githubuser.viewmodels.MainViewModel
 
 class FollowerFragment : Fragment() {
 
-    lateinit var binding: FragmentFollowerBinding
+    private lateinit var binding: FragmentFollowerBinding
     private lateinit var mainViewModel: MainViewModel
     private lateinit var followerAdapter: UserDetailAdapter
 

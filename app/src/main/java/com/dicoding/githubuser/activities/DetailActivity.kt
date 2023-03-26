@@ -18,8 +18,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityDetailBinding
-    lateinit var mainViewModel: MainViewModel
+    private lateinit var binding: ActivityDetailBinding
+    private lateinit var mainViewModel: MainViewModel
 
     companion object {
         @StringRes

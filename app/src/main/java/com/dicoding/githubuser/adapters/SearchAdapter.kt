@@ -12,7 +12,7 @@ import com.dicoding.githubuser.R
 import com.dicoding.githubuser.activities.DetailActivity
 import com.dicoding.githubuser.models.SearchModel
 
-class SearchAdapter() : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
     var mUsers: ArrayList<SearchModel> = ArrayList()
 
