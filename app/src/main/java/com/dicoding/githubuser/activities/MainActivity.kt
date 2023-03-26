@@ -39,6 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.isLoading.observe(this) {
             binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+
+            if (it) {
+                binding.llError.visibility = View.GONE
+                binding.llEmpty.visibility = View.GONE
+            }
         }
 
         mainViewModel.isSearch.observe(this) {
@@ -52,6 +57,11 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.search.observe(this) { response ->
             searchAdapter.mUsers = response.items!!
             searchAdapter.notifyDataSetChanged()
+        }
+
+        mainViewModel.isError.observe(this) {
+            binding.llError.visibility = if(it) View.VISIBLE else View.GONE
+            binding.rvSearch.visibility = if (it) View.GONE else View.VISIBLE
         }
 
     }

@@ -19,7 +19,7 @@ class MainViewModel : ViewModel() {
     private val _isEmpty =  MutableLiveData<Boolean>()
     private val _isSearch =  MutableLiveData<Boolean>()
     private val _isLoadingDetail =  MutableLiveData<Boolean>()
-    private val _isErrorDetail =  MutableLiveData<Boolean>()
+    private val _isError =  MutableLiveData<Boolean>()
 
     private val _isEmptyFollowers =  MutableLiveData<Boolean>()
     private val _isEmptyFollowing =  MutableLiveData<Boolean>()
@@ -33,7 +33,7 @@ class MainViewModel : ViewModel() {
     val isSearch: LiveData<Boolean> = _isSearch
 
     val isLoadingDetail: LiveData<Boolean> = _isLoadingDetail
-    val isErrorDetail: LiveData<Boolean> = _isErrorDetail
+    val isError: LiveData<Boolean> = _isError
 
     val isEmptyFollowers: LiveData<Boolean> = _isEmptyFollowers
     val isEmptyFollowing: LiveData<Boolean> = _isEmptyFollowing
@@ -49,15 +49,18 @@ class MainViewModel : ViewModel() {
                     _searchResponse.value = response.body()
 
                     _isEmpty.value = _searchResponse.value!!.items!!.isEmpty()
+                    _isError.value = false
 
                     Log.d("Search Users", "onSuccess: ${response.body()}")
                 } else {
+                    _isError.value = true
                     Log.e("Search Users", "onFailure: ${response.raw()}")
                 }
             }
 
             override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
                 _isLoading.value = false
+                _isError.value = true
                 Log.e("Search Users", "onFailure: ${t.message.toString()}")
             }
 
@@ -73,16 +76,17 @@ class MainViewModel : ViewModel() {
 
                 if (response.isSuccessful) {
                     _user.value = response.body()
-                    _isErrorDetail.value = false
+                    _isError.value = false
                     Log.d("Detail User", "onSuccess: ${response.body()}")
                 } else {
-                    _isErrorDetail.value = true
+                    _isError.value = true
                     Log.e("Detail User", "onFailure: ${response.raw()}")
                 }
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
                 _isLoadingDetail.value = false
+                _isError.value = true
                 Log.e("Detail User", "onFailure: ${t.message.toString()}")
             }
 

@@ -58,9 +58,13 @@ class DetailActivity : AppCompatActivity() {
 
         mainViewModel.isLoadingDetail.observe(this) {
             binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+
+            if (it) {
+                binding.llError.visibility = View.GONE
+            }
         }
 
-        mainViewModel.isErrorDetail.observe(this) {
+        mainViewModel.isError.observe(this) {
             binding.llError.visibility = if(it) View.VISIBLE else View.GONE
             binding.llData.visibility = if (it) View.GONE else View.VISIBLE
         }

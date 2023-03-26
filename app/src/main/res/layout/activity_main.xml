@@ -19,6 +19,36 @@
         tools:visibility="visible" />
 
     <LinearLayout
+        android:id="@+id/ll_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:src="@drawable/error"
+            android:layout_width="50dp"
+            android:layout_gravity="center"
+            android:layout_height="50dp"
+            app:tint="@color/black"
+            android:contentDescription="@string/icon_error" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:text="@string/error" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/ll_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
