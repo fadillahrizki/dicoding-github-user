@@ -21,4 +21,6 @@
     <string name="icon_office">icon office</string>
     <string name="icon_place">icon place</string>
     <string name="tab_layout">Tab layout</string>
+    <string name="icon_person_search">icon person search</string>
+    <string name="icon_empty">icon empty</string>
 </resources>

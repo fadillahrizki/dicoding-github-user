@@ -32,7 +32,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src="@drawable/empty"
-            app:tint="@color/black" />
+            app:tint="@color/black"
+            android:contentDescription="@string/icon_empty" />
 
         <TextView
             android:layout_width="wrap_content"

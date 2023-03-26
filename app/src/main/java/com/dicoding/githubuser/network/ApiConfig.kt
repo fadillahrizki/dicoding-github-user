@@ -13,7 +13,7 @@ class ApiConfig {
                 val requestHeaders = req.newBuilder()
                     .addHeader(
                         "Authorization",
-                        "token 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"
+                        "token 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N"
                     )
                     .build()
                 chain.proceed(requestHeaders)
