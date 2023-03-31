@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField("String", "API_KEY", '"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"')
+        buildConfigField("String", "API_KEY", '"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"')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         proguardFiles

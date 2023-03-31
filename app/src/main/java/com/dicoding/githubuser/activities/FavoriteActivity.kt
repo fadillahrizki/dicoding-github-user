@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.datastore.core.DataStore
@@ -50,6 +51,8 @@ class FavoriteActivity : AppCompatActivity() {
         mainViewModel.getFavoriteUsers().observe(this) {
             favoriteAdapter.mUsers = it
             favoriteAdapter.notifyDataSetChanged()
+
+            binding.llEmpty.visibility = if(it.isEmpty()) View.VISIBLE else View.GONE
         }
     }
 
