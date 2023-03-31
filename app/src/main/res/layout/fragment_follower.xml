@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
-        android:indeterminateTint="@color/black"
+        android:indeterminateTint="?attr/colorPrimary"
         android:visibility="gone"
         tools:visibility="visible" />
 
@@ -32,7 +32,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src="@drawable/empty"
-            app:tint="@color/black"
+            app:tint="?attr/colorPrimary"
             android:contentDescription="@string/icon_empty" />
 
         <TextView

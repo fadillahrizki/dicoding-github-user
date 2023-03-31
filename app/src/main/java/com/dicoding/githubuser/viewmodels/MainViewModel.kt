@@ -1,18 +1,20 @@
 package com.dicoding.githubuser.viewmodels
 
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.dicoding.githubuser.models.SearchResponse
 import com.dicoding.githubuser.models.User
 import com.dicoding.githubuser.models.UserDetail
 import com.dicoding.githubuser.network.ApiConfig
+import com.dicoding.githubuser.repositories.UserRepository
+import com.dicoding.githubuser.utils.SettingPreferences
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel : ViewModel() {
+class MainViewModel(application: Application) : ViewModel() {
     private val _searchResponse = MutableLiveData<SearchResponse>()
     private val _user = MutableLiveData<User>()
     private val _followers = MutableLiveData<ArrayList<UserDetail>>()
@@ -39,6 +41,10 @@ class MainViewModel : ViewModel() {
 
     val isEmptyFollowers: LiveData<Boolean> = _isEmptyFollowers
     val isEmptyFollowing: LiveData<Boolean> = _isEmptyFollowing
+
+    private val mUserRepository: UserRepository = UserRepository(application)
+    fun getFavoriteUsers(): LiveData<List<User>> = mUserRepository.getAllUser()
+    fun getFavoriteUser(id: Int): LiveData<User> = mUserRepository.getUser(id)
 
     fun searchUsers(query: String) {
         _isSearch.value = true
@@ -152,5 +158,15 @@ class MainViewModel : ViewModel() {
             }
 
         })
+    }
+
+    fun getThemeSettings(pref: SettingPreferences): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
+    }
+
+    fun saveThemeSetting(pref: SettingPreferences, isDarkModeActive: Boolean) {
+        viewModelScope.launch {
+            pref.saveThemeSetting(isDarkModeActive)
+        }
     }
 }

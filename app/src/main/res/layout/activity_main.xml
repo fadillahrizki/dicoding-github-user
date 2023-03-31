@@ -10,7 +10,7 @@
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminateTint="@color/black"
+        android:indeterminateTint="?attr/colorPrimary"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,13 +37,14 @@
             android:layout_gravity="center"
             android:contentDescription="@string/icon_error"
             android:src="@drawable/error"
-            app:tint="@color/black" />
+            app:tint="?attr/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/error"
+            android:textColor="?attr/colorPrimary"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -65,7 +66,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src="@drawable/empty"
-            app:tint="@color/black"
+            app:tint="?attr/colorPrimary"
             android:contentDescription="@string/icon_empty" />
 
         <TextView
@@ -73,6 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/empty_data"
+            android:textColor="?attr/colorPrimary"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -92,7 +94,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_person_search"
-            app:tint="@color/black"
+            app:tint="?attr/colorPrimary"
             android:contentDescription="@string/icon_person_search" />
 
         <TextView
@@ -100,6 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/search_first"
+            android:textColor="?attr/colorPrimary"
             android:textSize="20sp" />
 
     </LinearLayout>

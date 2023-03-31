@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubuser.R
 import com.dicoding.githubuser.adapters.UserDetailAdapter
 import com.dicoding.githubuser.databinding.FragmentFollowerBinding
 import com.dicoding.githubuser.viewmodels.MainViewModel
+import com.dicoding.githubuser.viewmodels.ViewModelFactory
 
 
 class FollowerFragment : Fragment() {
@@ -46,7 +46,8 @@ class FollowerFragment : Fragment() {
         binding.recyclerView.adapter = followerAdapter
         binding.recyclerView.setHasFixedSize(true)
 
-        mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get()
+        val factory = ViewModelFactory.getInstance(requireActivity().application)
+        mainViewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
 
         mainViewModel.isLoading.observe(viewLifecycleOwner) {
             binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE

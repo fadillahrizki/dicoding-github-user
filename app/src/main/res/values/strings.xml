@@ -23,4 +23,10 @@
     <string name="tab_layout">Tab layout</string>
     <string name="icon_person_search">icon person search</string>
     <string name="icon_empty">icon empty</string>
+    <string name="favorite">Favorite</string>
+    <string name="setting">Setting</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="logo">logo</string>
+    <string name="favorite_insert">Berhasil menambahkan ke favorite!</string>
+    <string name="favorite_delete">Berhasil menghapus dari favorite!</string>
 </resources>

@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragments.FollowingFragment">
+    tools:context=".activities.FavoriteActivity">
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
         android:indeterminateTint="?attr/colorPrimary"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <LinearLayout
         android:id="@+id/ll_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
         android:orientation="vertical"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible">
 
         <ImageView
@@ -40,15 +43,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/empty_data"
+            android:textColor="?attr/colorPrimary"
             android:textSize="20sp" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/rv_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_detail" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_favorite" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

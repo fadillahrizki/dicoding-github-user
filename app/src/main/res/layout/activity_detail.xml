@@ -17,7 +17,7 @@
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminateTint="@color/black"
+            android:indeterminateTint="?attr/colorPrimary"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
                 android:layout_gravity="center"
                 android:contentDescription="@string/icon_error"
                 android:src="@drawable/error"
-                app:tint="@color/black" />
+                app:tint="?attr/colorPrimary" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/black"
+                android:background="?attr/colorPrimary"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="24dp">
@@ -91,7 +91,7 @@
                     android:layout_marginVertical="12dp"
                     android:text="@string/example_name"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    android:textColor="?attr/colorOnPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/example_username"
                     android:textAlignment="center"
-                    android:textColor="@color/white" />
+                    android:textColor="?attr/colorOnPrimary" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -114,7 +114,7 @@
                         android:layout_marginEnd="6dp"
                         android:contentDescription="@string/icon_group"
                         android:src="@drawable/ic_group"
-                        app:tint="@color/white" />
+                        app:tint="?attr/colorOnPrimary" />
 
                     <TextView
                         android:id="@+id/followers"
@@ -122,21 +122,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/follower_count"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/followers"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/between"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
 
                     <TextView
                         android:id="@+id/following"
@@ -144,13 +144,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/follower_count"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/following"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
 
                 </LinearLayout>
 
@@ -166,7 +166,7 @@
                         android:layout_marginEnd="6dp"
                         android:contentDescription="@string/icon_office"
                         android:src="@drawable/ic_office"
-                        app:tint="@color/white" />
+                        app:tint="?attr/colorOnPrimary" />
 
                     <TextView
                         android:id="@+id/company"
@@ -174,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/example_company"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -189,7 +189,7 @@
                         android:layout_marginEnd="6dp"
                         android:contentDescription="@string/icon_place"
                         android:src="@drawable/ic_place"
-                        app:tint="@color/white" />
+                        app:tint="?attr/colorOnPrimary" />
 
                     <TextView
                         android:id="@+id/location"
@@ -197,7 +197,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="6dp"
                         android:text="@string/example_location"
-                        android:textColor="@color/white" />
+                        android:textColor="?attr/colorOnPrimary" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -206,11 +206,11 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/black"
+                android:background="?attr/colorPrimary"
                 android:contentDescription="@string/tab_layout"
-                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorColor="?attr/colorOnPrimary"
                 app:tabIndicatorHeight="6dp"
-                app:tabSelectedTextColor="@color/white"
+                app:tabSelectedTextColor="?attr/colorOnPrimary"
                 app:tabTextColor="@color/grey" />
 
             <androidx.viewpager2.widget.ViewPager2
